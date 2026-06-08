@@ -1,4 +1,4 @@
-# demo projects
+# Demo Projects
 
 ## Prerequisites
 1. Java

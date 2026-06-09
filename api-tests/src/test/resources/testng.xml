@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite">
+    <test name="E-Commerce API Tests">
+        <classes>
+            <class name="de.nelta.demo.api.tests.HealthTests"/>
+            <class name="de.nelta.demo.api.tests.AuthTests"/>
+            <class name="de.nelta.demo.api.tests.OrderTests"/>
+        </classes>
+    </test>
+</suite>

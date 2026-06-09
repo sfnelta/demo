@@ -1,0 +1,90 @@
+[{
+  "user_id": "6a26865a2b7f23be3915ae3a",
+  "product_id": "6a26865a2b7cd751ca7944c3",
+  "product_name": "Socks",
+  "product_amount": 95,
+  "qty": 59,
+  "tax_amt": 19,
+  "total_amt": 831
+},
+{
+  "user_id": "6a26865ae862bc9edd38ae59",
+  "product_id": "6a26865a83828d6529cf5eb3",
+  "product_name": "T-Shirt",
+  "product_amount": 79,
+  "qty": 15,
+  "tax_amt": 19,
+  "total_amt": 6081
+},
+{
+  "user_id": "6a26865aebb80754de47e709",
+  "product_id": "6a26865a8ce7c7d508a0422d",
+  "product_name": "Remote",
+  "product_amount": 84,
+  "qty": 2,
+  "tax_amt": 19,
+  "total_amt": 995
+},
+{
+  "user_id": "6a26865a942d48e881b9b215",
+  "product_id": "6a26865a5f726000b9714e83",
+  "product_name": "Television",
+  "product_amount": 63,
+  "qty": 74,
+  "tax_amt": 19,
+  "total_amt": 5688
+},
+{
+  "user_id": "6a26865a7f285c14f6ff3bad",
+  "product_id": "6a26865ad3a8ea6304fd7d73",
+  "product_name": "Snacks",
+  "product_amount": 4,
+  "qty": 27,
+  "tax_amt": 19,
+  "total_amt": 9709
+},
+{
+  "user_id": "6a26865ab7ba86b115d41ec4",
+  "product_id": "6a26865a589463e37e75fc3f",
+  "product_name": "Lamps",
+  "product_amount": 40,
+  "qty": 55,
+  "tax_amt": 19,
+  "total_amt": 1046
+},
+{
+  "user_id": "6a26865a07d5f114eba55a8b",
+  "product_id": "6a26865a34ff7e7c8b9ba5af",
+  "product_name": "Covers",
+  "product_amount": 69,
+  "qty": 54,
+  "tax_amt": 19,
+  "total_amt": 1920
+},
+{
+  "user_id": "6a26865a455081eb5a4d1850",
+  "product_id": "6a26865aaa9c7d9e8e9ed3ca",
+  "product_name": "Paint",
+  "product_amount": 71,
+  "qty": 42,
+  "tax_amt": 19,
+  "total_amt": 7015
+},
+{
+  "user_id": "6a26865ac0f6d44c7ddf81be",
+  "product_id": "6a26865a321f7c3e3726c976",
+  "product_name": "Lights",
+  "product_amount": 84,
+  "qty": 11,
+  "tax_amt": 19,
+  "total_amt": 3169
+},
+{
+  "user_id": "6a26865a54f80610d9ac49c2",
+  "product_id": "6a26865a86a8625394b605a2",
+  "product_name": "Carpets",
+  "product_amount": 86,
+  "qty": 64,
+  "tax_amt": 19,
+  "total_amt": 8627
+}]

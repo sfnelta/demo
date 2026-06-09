@@ -7,6 +7,8 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <aspectj.version>1.9.22.1</aspectj.version>
+    <allure.version>2.29.0</allure.version>
   </properties>
   
   <dependencies>
@@ -14,7 +16,6 @@
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>6.0.0</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
@@ -23,26 +24,68 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.5.6</version>
-      <scope>compile</scope>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20260522</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.18.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.18.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-schema-validator</artifactId>
+      <version>6.0.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>${allure.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-rest-assured</artifactId>
+      <version>${allure.version}</version>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.6</version>
         <configuration>
-          <excludes>
-            <!-- Example not actually used -->
-            <exclude>DataTest.java</exclude>
-          </excludes>
-          <includes>
-            <include>RestAssuredDemo.java</include>
-          </includes>
+          <suiteXmlFiles>
+            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.15.2</version>
+        <configuration>
+          <reportVersion>${allure.version}</reportVersion>
+          <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
         </configuration>
       </plugin>
     </plugins>

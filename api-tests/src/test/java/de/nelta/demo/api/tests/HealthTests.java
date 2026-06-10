@@ -1,7 +1,6 @@
 package de.nelta.demo.api.tests;
 
 import de.nelta.demo.api.base.BaseTest;
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;

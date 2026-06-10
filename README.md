@@ -28,8 +28,9 @@ A robust API testing suite targeting the `restful-ecommerce` Node.js application
 *   **Generating Reports**:
     ```powershell
     mvn allure:report -pl api-tests
-    # Report will be in: api-tests/target/site/allure-maven-plugin/index.html
     ```
+    Report will be in: `api-tests/target/site/allure-maven-plugin/index.html`
+
 *   **Key Files**:
     *   `DESIGN.md`: Architectural specifications.
     *   `TEST_CONCEPT.md`: Detailed test scenarios and objectives.

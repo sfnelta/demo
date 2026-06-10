@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeSuite;
 public class BaseTest {
     protected static AuthClient authClient;
     protected static OrderClient orderClient;
-    protected String token;
+    protected static String token;
 
     @BeforeSuite
     public void setupSuite() {

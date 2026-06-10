@@ -1,7 +1,5 @@
 package de.nelta.demo.api.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Order {
     private String user_id;
     private String product_id;

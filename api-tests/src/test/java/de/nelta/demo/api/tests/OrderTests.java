@@ -64,7 +64,7 @@ public class OrderTests extends BaseTest {
                 .body("message", equalTo("Order found!!"));
     }
 
-    @Test(dependsOnMethods = "testAddOrder", enabled = false)
+    @Test(dependsOnMethods = "testAddOrder")
     public void testUpdateOrderSecured() {
         Response allOrders = orderClient.getAllOrders();
         var json = allOrders.jsonPath();
@@ -117,7 +117,7 @@ public class OrderTests extends BaseTest {
                 .body("orders[0].user_id", equalTo("user123"));
     }
 
-    @Test(dependsOnMethods = "testAddOrder", enabled = false)
+    @Test(dependsOnMethods = "testAddOrder")
     public void testPartialUpdateOrder() {
         Response allOrders = orderClient.getAllOrders();
         int orderId = allOrders.jsonPath().getInt("orders[0].id");
@@ -132,7 +132,10 @@ public class OrderTests extends BaseTest {
                 .statusCode(200);
     }
 
-    @Test(dependsOnMethods = "testAddOrder", enabled = false)
+    @Test(dependsOnMethods = {
+            "testAddOrder", "testGetAllOrders", "testGetOrderById",
+            "testUpdateOrderSecured", "testGetOrderByUserId", "testPartialUpdateOrder"
+    })
     public void testDeleteOrder() {
         Response allOrders = orderClient.getAllOrders();
         int orderId = allOrders.jsonPath().getInt("orders[0].id");

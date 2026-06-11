@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
 import io.github.bonigarcia.wdm.WebDriverManager
 
 open class BaseTest {
@@ -12,8 +13,12 @@ open class BaseTest {
     @BeforeEach
     fun setUp() {
         WebDriverManager.chromedriver().setup()
-        WebDriverManager.chromedriver().properties("--disable-web-security --incognito --guest")
-        driver = ChromeDriver()
+
+        // Fixme: Avoids the built-in password manager 
+        val options = ChromeOptions()
+        options.addArguments("--incognito")
+        driver = ChromeDriver(options)
+
         driver.manage().window().maximize()
     }
 

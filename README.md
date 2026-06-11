@@ -45,7 +45,24 @@ Gatling-based performance tests for high-load simulation.
     ```
 
 ### 3. UI Tests (`ui-tests`)
-*(In development)*
+End-to-end UI tests targeting the public demo site [saucedemo.com](https://www.saucedemo.com/).
+
+*   **Architecture**: Page Object Model (POM) with a fluent API.
+*   **Technologies**: Selenium WebDriver, Kotlin 1.9, JUnit 5, WebDriverManager.
+*   **Features**:
+    *   Automatic ChromeDriver management via WebDriverManager (no manual driver setup).
+    *   Full shopping flow coverage: login → add to cart → checkout → order confirmation.
+    *   Fluent page-object chain for readable, maintainable test code.
+*   **Prerequisites**: Google Chrome must be installed.
+*   **Running UI Tests**:
+    ```powershell
+    mvn test -pl ui-tests
+    ```
+*   **Key Files**:
+    *   `DESIGN.md`: Architecture and test concept.
+    *   `src/test/kotlin/base/BaseTest.kt`: WebDriver setup/teardown.
+    *   `src/test/kotlin/pages/`: Page Object classes (`LoginPage`, `InventoryPage`, `CartPage`, `CheckoutPage`).
+    *   `src/test/kotlin/tests/ShoppingTest.kt`: End-to-end test scenario.
 
 ## Build the Entire Project
 To build all modules and install them to your local repository:
@@ -56,3 +73,4 @@ mvn clean install
 ## Documentation
 *   [API Design Document](api-tests/DESIGN.md)
 *   [API Test Concept](api-tests/TEST_CONCEPT.md)
+*   [UI Tests Design Document](ui-tests/DESIGN.md)

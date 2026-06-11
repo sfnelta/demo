@@ -5,3 +5,4 @@
 *.jar
 /api-tests/.allure
 /api-tests/allure-results
+.aiexclude

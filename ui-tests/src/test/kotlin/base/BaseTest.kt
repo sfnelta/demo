@@ -17,6 +17,7 @@ open class BaseTest {
         // Fixme: Avoids the built-in password manager 
         val options = ChromeOptions()
         options.addArguments("--incognito")
+        options.addArguments("--headless")
         driver = ChromeDriver(options)
 
         driver.manage().window().maximize()

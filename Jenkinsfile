@@ -1,19 +1,19 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
     agent any
-
     stages {
-        stage('build') {
+        stage("Build Maven") {
             steps {
-                sh 'mvn --version'
-                sh 'mvn install -DskipTests'
+                sh 'mvn -B clean package'
             }
         }
-        stage('test') {
+        stage("Run Gatling") {
             steps {
-                sh 'mvn clean test -pl api-tests'
-                sh 'mvn clean test -pl ui-tests'
-                sh 'mvn gatling:test -pl performance-tests'
+                sh 'mvn gatling:test'
+            }
+            post {
+                always {
+                    gatlingArchive()
+                }
             }
         }
     }

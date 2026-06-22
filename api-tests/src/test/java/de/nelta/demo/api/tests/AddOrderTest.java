@@ -31,8 +31,7 @@ public class AddOrderTest extends BaseTest {
     public void testAddOrder() {
         Order order = new Order(
                 "user123", "prod456", "Test Product",
-                10.0, 2, 1.9, 21.9
-        );
+                10.0, 2, 1.9, 21.9);
 
         Response response = orderClient.addOrders(Arrays.asList(order));
 
